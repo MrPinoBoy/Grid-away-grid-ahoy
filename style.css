@@ -1,0 +1,82 @@
+@keyframes button {
+    0%{box-shadow: 0px 0px 5px rgb(255, 255, 255)}
+    100%{transform: translate(0, -25%);box-shadow: 0px 10px 10px rgb(214, 214, 214);}
+}
+@keyframes card {
+    0%{}
+    100%{box-shadow: 0px 15px 15px rgba(134, 170, 187, 0.5);}
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr  repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 2%;
+    grid-row-gap: 4%;
+    justify-items: center;/*horizontal*/
+    padding: 2em;
+    margin-bottom: 3em;
+}
+body {
+    background: rgb(230,239,246);
+}
+div.item {
+    position: relative;
+    background-color: white;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: /*1px 1px 2px rgb(134, 170, 187), -1px 1px 2px rgb(134, 170, 187),*/ 0px 1px 2px rgb(134, 170, 187);
+}
+div.item:hover {
+    animation: card 0.2s forwards;
+}
+.line {
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 25%;
+    height: 1px;
+    background: rgb(179, 179, 179);
+}
+img {
+    max-width: 100%;
+}
+h1 {
+    text-transform: capitalize;
+    font-size: 150%;
+}
+.learn {
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(58, 58, 58);
+    font-family: sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 60%;
+    padding: 5% 0%;
+}
+.button:hover {
+    color: white;
+}
+.learn:hover {
+    background-color: #4AAAF4;
+    color: white;
+    border-radius: 9999px;
+    margin: auto 25%;
+    width: 50%;
+    animation: button 0.3s 0.1s forwards;
+}
+p {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 150%;
+    color: rgb(100, 100, 100);
+}
+@media screen and (max-width: 768px) {
+    .container{
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
