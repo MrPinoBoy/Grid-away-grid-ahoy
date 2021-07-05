@@ -1,6 +1,6 @@
 @keyframes button {
-    0%{box-shadow: 0px 0px 5px rgb(255, 255, 255)}
-    100%{transform: translate(0, -25%);box-shadow: 0px 10px 10px rgb(214, 214, 214);}
+    0%{box-shadow: 0px 0px 5px rgb(255, 255, 255), 0px -30px 1px white;;}
+    100%{transform: translate(0, -25%);box-shadow: 0px 10px 10px rgb(214, 214, 214), 0px -50px 1px white;;}
 }
 @keyframes card {
     0%{}
@@ -8,16 +8,40 @@
 }
 .container {
     display: grid;
-    grid-template-columns: 1fr  repeat(3, 1fr);
+    grid-template-columns: 1fr repeat(3, 1fr);
     grid-auto-rows: 1fr;
-    grid-column-gap: 2%;
-    grid-row-gap: 4%;
-    justify-items: center;/*horizontal*/
-    padding: 2em;
-    margin-bottom: 3em;
+    column-gap: 2%;
+    row-gap: 2%;
+    padding-left: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: absolute;
+    height: 90%;
+    padding-bottom: 100px;
 }
 body {
     background: rgb(230,239,246);
+    margin-left: 0;
+    margin-top: 0;
+}
+div.navbar {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    background-color: rgb(202, 202, 202);
+    border-radius: 25px;
+    display: none;
+}
+ul {
+    list-style: none;
+}
+.navbar a {
+    border-bottom: 1px solid grey;
+    text-decoration: none;
+    color: grey;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    margin: 15%;
 }
 div.item {
     position: relative;
@@ -38,6 +62,8 @@ div.item:hover {
     width: 25%;
     height: 1px;
     background: rgb(179, 179, 179);
+    z-index: 0;
+    position: inherit;
 }
 img {
     max-width: 100%;
@@ -45,6 +71,22 @@ img {
 h1 {
     text-transform: capitalize;
     font-size: 150%;
+}
+.btn {
+    position: fixed;
+    z-index: 25;
+    width: 5%;
+    height: 5%;
+}
+#hamburger {
+    display: none;
+}
+#hamburger:checked ~ div.container > div.navbar {
+    display: block;
+}
+table {
+    width: 100%;
+    height: 100%;
 }
 .learn {
     text-decoration: none;
@@ -55,6 +97,7 @@ h1 {
     text-transform: uppercase;
     width: 60%;
     padding: 5% 0%;
+    position: relative;
 }
 .button:hover {
     color: white;
@@ -63,9 +106,11 @@ h1 {
     background-color: #4AAAF4;
     color: white;
     border-radius: 9999px;
-    margin: auto 25%;
-    width: 50%;
+    margin: auto 20%;
+    width: 60%;
     animation: button 0.3s 0.1s forwards;
+    z-index: 1;
+    position: inherit;
 }
 p {
     padding-left: 10%;
@@ -74,6 +119,8 @@ p {
     text-align-last: center;
     line-height: 150%;
     color: rgb(100, 100, 100);
+    z-index: 10;
+    position: inherit;
 }
 @media screen and (max-width: 768px) {
     .container{
