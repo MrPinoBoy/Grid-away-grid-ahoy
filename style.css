@@ -22,16 +22,24 @@ body {
     margin-bottom: 5%;
     position: absolute;
     padding-bottom: 100px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 div.navbar {
-    grid-column: 1/2;
-    grid-row: 1/4;
-    background-color: rgb(202, 202, 202);
-    border-radius: 25px;
+    background-color: #EDF1F0;
+    border-radius: 0px 0px 25px 0px;
+    height: 80%;
+    width: 15%;
     display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 11;
 }
 ul {
     list-style: none;
+    position: relative;
+    top: 15%;
 }
 .navbar a {
     border-bottom: 1px solid grey;
@@ -77,10 +85,12 @@ h1 {
     width: 5%;
     height: 5%;
 }
+.btnLeft {
+    border: 1px solid rgba(133, 133, 133, 0.404);}
 #hamburger {
     display: none;
 }
-#hamburger:checked ~ div.container > div.navbar {
+#hamburger:checked ~ div.navbar {
     display: block;
 }
 table {
